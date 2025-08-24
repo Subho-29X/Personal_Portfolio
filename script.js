@@ -107,13 +107,13 @@ document.addEventListener("DOMContentLoaded", function () {
       card.addEventListener("touchstart", function (e) {
         card.classList.add("mobile-active");
       });
-      
+
       card.addEventListener("touchend", function (e) {
         setTimeout(() => {
           card.classList.remove("mobile-active");
         }, 300);
       });
-      
+
       // Fallback for click events
       card.addEventListener("click", function (e) {
         card.classList.add("mobile-active");
@@ -128,13 +128,13 @@ document.addEventListener("DOMContentLoaded", function () {
       card.addEventListener("touchstart", function (e) {
         card.classList.add("mobile-active");
       });
-      
+
       card.addEventListener("touchend", function (e) {
         setTimeout(() => {
           card.classList.remove("mobile-active");
         }, 150);
       });
-      
+
       // Fallback for click events
       card.addEventListener("click", function (e) {
         card.classList.add("mobile-active");
