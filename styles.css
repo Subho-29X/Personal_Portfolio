@@ -38,7 +38,12 @@ body {
   transform-style: preserve-3d;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
+/* Flip on hover (desktop) */
 .flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+/* Flip on .flipped class (mobile/touch) */
+.flip-card.flipped .flip-card-inner {
   transform: rotateY(180deg);
 }
 .flip-card-front,
@@ -95,7 +100,9 @@ body {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
-Typed.js Cursor Styling .typed-cursor {
+
+/* Typed.js Cursor Styling */
+.typed-cursor {
   color: var(--neon);
   animation: blink 0.7s infinite;
 }

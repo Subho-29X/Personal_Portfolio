@@ -2,7 +2,10 @@
 <html lang="en" class="scroll-smooth scroll-pt-16">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
     <title>Subhojit Ghosh - Portfolio</title>
     <!-- Favicon -->
     <link
@@ -60,7 +63,13 @@
 
           <!-- Mobile Menu Button -->
           <div class="md:hidden">
-            <button id="menu-btn" class="text-white focus:outline-none">
+            <button
+              id="menu-btn"
+              class="text-white focus:outline-none"
+              aria-label="Open navigation menu"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+            >
               <i class="fas fa-bars text-2xl"></i>
             </button>
           </div>
@@ -104,7 +113,10 @@
             <h1 class="text-4xl md:text-6xl font-bold mb-4 space-font">
               Hi, I'm <span class="gradient-text">Subhojit Ghosh</span>
             </h1>
-            <p class="text-lg text-slate-400 mb-8 leading-relaxed">
+            <p class="text-lg text-slate-400 mb-2 leading-relaxed">
+              <span id="typed-subtitle"></span>
+            </p>
+            <p class="text-sm text-slate-500 mb-8 leading-relaxed">
               Passionate Programmer | Problem Solver | Web Developer | Lifelong
               Learner | Tech Enthusiast | Always Evolving | Driven by Challenges
             </p>
@@ -706,8 +718,7 @@
         </p>
       </div>
     </footer>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="script.js"></script>
   </body>
-  <script src="script.js"></script>
-  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-  ;
 </html>
