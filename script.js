@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // --- Flip Card Touch Support for Mobile ---
+  // --- Project Card Touch Support for Mobile ---
   function isTouchDevice() {
     return (
       "ontouchstart" in window ||
@@ -102,11 +102,57 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   if (isTouchDevice()) {
+    // Modern project card touch support (simple hover effect)
+    document.querySelectorAll(".project-card").forEach((card) => {
+      card.addEventListener("touchstart", function (e) {
+        card.classList.add("mobile-active");
+      });
+      
+      card.addEventListener("touchend", function (e) {
+        setTimeout(() => {
+          card.classList.remove("mobile-active");
+        }, 300);
+      });
+      
+      // Fallback for click events
+      card.addEventListener("click", function (e) {
+        card.classList.add("mobile-active");
+        setTimeout(() => {
+          card.classList.remove("mobile-active");
+        }, 300);
+      });
+    });
+
+    // Skill card touch support
+    document.querySelectorAll(".skill-card").forEach((card) => {
+      card.addEventListener("touchstart", function (e) {
+        card.classList.add("mobile-active");
+      });
+      
+      card.addEventListener("touchend", function (e) {
+        setTimeout(() => {
+          card.classList.remove("mobile-active");
+        }, 150);
+      });
+      
+      // Fallback for click events
+      card.addEventListener("click", function (e) {
+        card.classList.add("mobile-active");
+        setTimeout(() => {
+          card.classList.remove("mobile-active");
+        }, 300);
+      });
+    });
+
+    // Legacy flip card support (for backward compatibility)
     document.querySelectorAll(".flip-card").forEach((card) => {
       card.addEventListener("click", function (e) {
-        // Only flip if not already flipped, or unflip if already flipped
+        card.classList.add("mobile-active");
+        setTimeout(() => {
+          card.classList.remove("mobile-active");
+        }, 300);
+
         if (!card.classList.contains("flipped")) {
-          // Remove flipped from all other cards
           document.querySelectorAll(".flip-card.flipped").forEach((c) => {
             c.classList.remove("flipped");
           });
@@ -115,14 +161,6 @@ document.addEventListener("DOMContentLoaded", function () {
           card.classList.remove("flipped");
         }
       });
-    });
-    // Optional: close flip if user taps outside any card
-    document.addEventListener("touchstart", function (e) {
-      if (!e.target.closest(".flip-card")) {
-        document.querySelectorAll(".flip-card.flipped").forEach((c) => {
-          c.classList.remove("flipped");
-        });
-      }
     });
   }
 
