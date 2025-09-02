@@ -28,660 +28,699 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   </head>
   <body class="bg-slate-900 text-white">
-    <!-- Navbar -->
-    <nav
-      class="fixed w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800"
-    >
-      <div class="container mx-auto px-4 py-3">
-        <div class="flex justify-between items-center">
-          <a href="#home" class="text-2xl font-bold space-font gradient-text"
-            >SG.</a
-          >
-
-          <div class="hidden md:flex space-x-8" id="desktop-menu">
-            <a href="#home" class="hover:text-indigo-400 transition-colors"
-              >Home</a
-            >
-            <a href="#about" class="hover:text-indigo-400 transition-colors"
-              >About</a
-            >
-            <a href="#skills" class="hover:text-indigo-400 transition-colors"
-              >Skills</a
-            >
-            <a href="#projects" class="hover:text-indigo-400 transition-colors"
-              >Projects</a
-            >
-            <a
-              href="#publications"
-              class="hover:text-indigo-400 transition-colors"
-              >Publications</a
-            >
-            <a href="#contact" class="hover:text-indigo-400 transition-colors"
-              >Contact</a
-            >
-          </div>
-
-          <!-- Mobile Menu Button -->
-          <div class="md:hidden">
-            <button
-              id="menu-btn"
-              class="text-white focus:outline-none"
-              aria-label="Open navigation menu"
-              aria-controls="mobile-menu"
-              aria-expanded="false"
-            >
-              <i class="fas fa-bars text-2xl"></i>
-            </button>
-          </div>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+      <div class="loading-container">
+        <div class="logo-container">
+          <div class="loading-logo">SG.</div>
+          <div class="loading-subtitle">Portfolio</div>
         </div>
+        <div class="loading-spinner">
+          <div class="spinner-ring"></div>
+          <div class="spinner-ring"></div>
+          <div class="spinner-ring"></div>
+        </div>
+        <div class="loading-progress">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <div class="loading-text" id="loading-text">Loading...</div>
       </div>
-      <!-- Mobile Menu -->
-      <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95">
-        <a href="#home" class="block py-3 px-4 text-sm hover:bg-slate-700"
-          >Home</a
-        >
-        <a href="#about" class="block py-3 px-4 text-sm hover:bg-slate-700"
-          >About</a
-        >
-        <a href="#skills" class="block py-3 px-4 text-sm hover:bg-slate-700"
-          >Skills</a
-        >
-        <a href="#projects" class="block py-3 px-4 text-sm hover:bg-slate-700"
-          >Projects</a
-        >
-        <a
-          href="#publications"
-          class="block py-3 px-4 text-sm hover:bg-slate-700"
-          >Publications</a
-        >
-        <a href="#contact" class="block py-3 px-4 text-sm hover:bg-slate-700"
-          >Contact</a
-        >
+      <div class="loading-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
       </div>
-    </nav>
+    </div>
 
-    <!-- Hero Section -->
-    <section
-      id="home"
-      class="min-h-screen flex items-center justify-center pt-20 md:pt-16"
-    >
-      <div class="container mx-auto px-4">
-        <div
-          class="flex flex-col md:flex-row items-center justify-between gap-12"
-        >
-          <div class="md:w-1/2 text-center md:text-left" data-aos="fade-right">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4 space-font">
-              Hi, I'm <span class="gradient-text">Subhojit Ghosh</span>
-            </h1>
-            <p class="text-lg text-slate-400 mb-2 leading-relaxed">
-              <span id="typed-subtitle"></span>
-            </p>
-            <p class="text-sm text-slate-500 mb-8 leading-relaxed">
-              Passionate Programmer | Problem Solver | Web Developer | Lifelong
-              Learner | Tech Enthusiast | Always Evolving | Driven by Challenges
-            </p>
-            <div class="flex flex-wrap justify-center md:justify-start gap-4">
-              <a
-                href="#contact"
-                class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-full transition-colors"
+    <!-- Main Content -->
+    <div id="main-content" class="main-content hidden">
+      <!-- Navbar -->
+      <nav
+        class="fixed w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800"
+      >
+        <div class="container mx-auto px-4 py-3">
+          <div class="flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold space-font gradient-text"
+              >SG.</a
+            >
+
+            <div class="hidden md:flex space-x-8" id="desktop-menu">
+              <a href="#home" class="hover:text-indigo-400 transition-colors"
+                >Home</a
               >
-                Contact Me
-              </a>
-              <a
-                href="assets/Resume.pdf"
-                download="Subhojit_Ghosh_CV.pdf"
-                class="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full transition-colors flex items-center gap-2"
+              <a href="#about" class="hover:text-indigo-400 transition-colors"
+                >About</a
               >
-                <i class="fas fa-download"></i> Download CV
-              </a>
+              <a href="#skills" class="hover:text-indigo-400 transition-colors"
+                >Skills</a
+              >
               <a
                 href="#projects"
-                class="border border-indigo-600 text-indigo-400 hover:bg-indigo-600 hover:text-white px-8 py-3 rounded-full transition-all"
+                class="hover:text-indigo-400 transition-colors"
+                >Projects</a
               >
-                View Projects
-              </a>
+              <a
+                href="#publications"
+                class="hover:text-indigo-400 transition-colors"
+                >Publications</a
+              >
+              <a href="#contact" class="hover:text-indigo-400 transition-colors"
+                >Contact</a
+              >
             </div>
-          </div>
-          <div class="md:w-1/2 mt-12 md:mt-0" data-aos="fade-left">
-            <div class="relative w-64 h-64 md:w-80 md:h-80 mx-auto">
-              <div
-                class="absolute inset-0 bg-indigo-500 rounded-full blur-3xl opacity-30 animate-pulse"
-              ></div>
-              <img
-                src="assets/download (2).png"
-                alt="Profile"
-                class="relative z-10 w-full h-full object-cover rounded-full border-4 border-indigo-500/50 shadow-2xl"
-              />
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+              <button
+                id="menu-btn"
+                class="text-white focus:outline-none"
+                aria-label="Open navigation menu"
+                aria-controls="mobile-menu"
+                aria-expanded="false"
+              >
+                <i class="fas fa-bars text-2xl"></i>
+              </button>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95">
+          <a href="#home" class="block py-3 px-4 text-sm hover:bg-slate-700"
+            >Home</a
+          >
+          <a href="#about" class="block py-3 px-4 text-sm hover:bg-slate-700"
+            >About</a
+          >
+          <a href="#skills" class="block py-3 px-4 text-sm hover:bg-slate-700"
+            >Skills</a
+          >
+          <a href="#projects" class="block py-3 px-4 text-sm hover:bg-slate-700"
+            >Projects</a
+          >
+          <a
+            href="#publications"
+            class="block py-3 px-4 text-sm hover:bg-slate-700"
+            >Publications</a
+          >
+          <a href="#contact" class="block py-3 px-4 text-sm hover:bg-slate-700"
+            >Contact</a
+          >
+        </div>
+      </nav>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-slate-800/50">
-      <div class="container mx-auto px-4">
-        <h2
-          class="text-3xl md:text-4xl font-bold mb-12 text-center space-font"
-          data-aos="fade-up"
-        >
-          About <span class="gradient-text">Me</span>
-        </h2>
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-          <div class="space-y-6" data-aos="fade-right">
-            <p class="text-slate-300 leading-relaxed">
-              I'm a Computer Science Engineering graduate from Chandigarh
-              University with a strong foundation in programming and web
-              development. My passion lies in creating innovative solutions and
-              learning new technologies.
-            </p>
-            <p class="text-slate-300 leading-relaxed">
-              With expertise in full-stack development and a keen interest in
-              data structures and algorithms, I strive to build efficient and
-              scalable applications that solve real-world problems.
-            </p>
-          </div>
-          <div class="space-y-4" data-aos="fade-left">
+      <!-- Hero Section -->
+      <section
+        id="home"
+        class="min-h-screen flex items-center justify-center pt-20 md:pt-16"
+      >
+        <div class="container mx-auto px-4">
+          <div
+            class="flex flex-col md:flex-row items-center justify-between gap-12"
+          >
             <div
-              class="flex items-center space-x-4 p-4 bg-slate-700/50 rounded-lg transition-all hover:bg-slate-700/80 hover:shadow-lg"
+              class="md:w-1/2 text-center md:text-left"
+              data-aos="fade-right"
             >
-              <i class="fas fa-graduation-cap text-2xl text-indigo-400"></i>
-              <div>
-                <h3 class="font-semibold">Education</h3>
-                <p class="text-sm text-slate-400">
-                  B.Tech in Computer Science Engineering
-                </p>
-                <p class="text-sm text-slate-400">CGPA: 8.0</p>
+              <h1 class="text-4xl md:text-6xl font-bold mb-4 space-font">
+                Hi, I'm <span class="gradient-text">Subhojit Ghosh</span>
+              </h1>
+              <p class="text-lg text-slate-400 mb-2 leading-relaxed">
+                <span id="typed-subtitle"></span>
+              </p>
+              <p class="text-sm text-slate-500 mb-8 leading-relaxed">
+                Passionate Programmer | Problem Solver | Web Developer |
+                Lifelong Learner | Tech Enthusiast | Always Evolving | Driven by
+                Challenges
+              </p>
+              <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                <a
+                  href="#contact"
+                  class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-full transition-colors"
+                >
+                  Contact Me
+                </a>
+                <a
+                  href="assets/Resume.pdf"
+                  download="Subhojit_Ghosh_CV.pdf"
+                  class="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full transition-colors flex items-center gap-2"
+                >
+                  <i class="fas fa-download"></i> Download CV
+                </a>
+                <a
+                  href="#projects"
+                  class="border border-indigo-600 text-indigo-400 hover:bg-indigo-600 hover:text-white px-8 py-3 rounded-full transition-all"
+                >
+                  View Projects
+                </a>
               </div>
             </div>
-            <div
-              class="flex items-center space-x-4 p-4 bg-slate-700/50 rounded-lg transition-all hover:bg-slate-700/80 hover:shadow-lg"
-            >
-              <i class="fas fa-code text-2xl text-indigo-400"></i>
-              <div>
-                <h3 class="font-semibold">Experience</h3>
-                <p class="text-sm text-slate-400">Full Stack Development</p>
-                <p class="text-sm text-slate-400">
-                  Data Structures & Algorithms
-                </p>
+            <div class="md:w-1/2 mt-12 md:mt-0" data-aos="fade-left">
+              <div class="relative w-64 h-64 md:w-80 md:h-80 mx-auto">
+                <div
+                  class="absolute inset-0 bg-indigo-500 rounded-full blur-3xl opacity-30 animate-pulse"
+                ></div>
+                <img
+                  src="assets/download (2).png"
+                  alt="Profile"
+                  class="relative z-10 w-full h-full object-cover rounded-full border-4 border-indigo-500/50 shadow-2xl"
+                />
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-20">
-      <div class="container mx-auto px-4">
-        <h2
-          class="text-3xl md:text-4xl font-bold mb-12 text-center space-font"
-          data-aos="fade-up"
-        >
-          Technical <span class="gradient-text">Skills</span>
-        </h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          <!-- Skill items -->
-          <div
-            class="p-6 bg-slate-800/50 rounded-lg text-center skill-card"
-            data-aos="zoom-in"
-          >
-            <i class="fab fa-html5 text-4xl text-red-500 mb-4"></i>
-            <h3 class="font-semibold">HTML5</h3>
-          </div>
-          <div
-            class="p-6 bg-slate-800/50 rounded-lg text-center skill-card"
-            data-aos="zoom-in"
-          >
-            <i class="fab fa-css3-alt text-4xl text-blue-400 mb-4"></i>
-            <h3 class="font-semibold">CSS3</h3>
-          </div>
-          <div
-            class="p-6 bg-slate-800/50 rounded-lg text-center skill-card"
-            data-aos="zoom-in"
-          >
-            <i class="fab fa-js text-4xl text-yellow-400 mb-4"></i>
-            <h3 class="font-semibold">JavaScript</h3>
-          </div>
-          <div
-            class="p-6 bg-slate-800/50 rounded-lg text-center skill-card"
-            data-aos="zoom-in"
-          >
-            <i class="fab fa-bootstrap text-4xl text-purple-500 mb-4"></i>
-            <h3 class="font-semibold">Bootstrap</h3>
-          </div>
-          <div
-            class="p-6 bg-slate-800/50 rounded-lg text-center skill-card"
-            data-aos="zoom-in"
-          >
-            <i class="fab fa-node text-4xl text-green-400 mb-4"></i>
-            <h3 class="font-semibold">NodeJS</h3>
-          </div>
-          <div
-            class="p-6 bg-slate-800/50 rounded-lg text-center skill-card"
-            data-aos="zoom-in"
-          >
-            <i class="fab fa-node-js text-4xl text-green-500 mb-4"></i>
-            <h3 class="font-semibold">Express</h3>
-          </div>
-          <div
-            class="p-6 bg-slate-800/50 rounded-lg text-center skill-card"
-            data-aos="zoom-in"
-          >
-            <i class="fas fa-database text-4xl text-green-400 mb-4"></i>
-            <h3 class="font-semibold">MongoDB</h3>
-          </div>
-          <div
-            class="p-6 bg-slate-800/50 rounded-lg text-center skill-card"
-            data-aos="zoom-in"
-          >
-            <i class="fab fa-react text-4xl text-blue-400 mb-4"></i>
-            <h3 class="font-semibold">React.js</h3>
-          </div>
-          <div
-            class="p-6 bg-slate-800/50 rounded-lg text-center skill-card"
-            data-aos="zoom-in"
-          >
-            <i class="fab fa-java text-4xl text-red-500 mb-4"></i>
-            <h3 class="font-semibold">Java</h3>
-          </div>
-          <div
-            class="p-6 bg-slate-800/50 rounded-lg text-center skill-card"
-            data-aos="zoom-in"
-          >
-            <i class="fab fa-python text-4xl text-blue-500 mb-4"></i>
-            <h3 class="font-semibold">Python</h3>
-          </div>
-          <div
-            class="p-6 bg-slate-800/50 rounded-lg text-center skill-card"
-            data-aos="zoom-in"
-          >
-            <i class="fas fa-code text-4xl text-indigo-400 mb-4"></i>
-            <h3 class="font-semibold">DSA</h3>
-          </div>
-          <div
-            class="p-6 bg-slate-800/50 rounded-lg text-center skill-card"
-            data-aos="zoom-in"
-          >
-            <i class="fab fa-git-alt text-4xl text-orange-500 mb-4"></i>
-            <h3 class="font-semibold">Git</h3>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-slate-800/50">
-      <div class="container mx-auto px-4">
-        <h2
-          class="text-3xl md:text-4xl font-bold mb-12 text-center space-font"
-          data-aos="fade-up"
-        >
-          Featured <span class="gradient-text">Projects</span>
-        </h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- CodeConnect -->
-          <div class="project-card" data-aos="fade-up">
-            <div class="project-image">
-              <div
-                class="project-gradient bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500"
-              >
-                <div class="project-pattern"></div>
-                <div class="project-icon-overlay">
-                  <i class="fas fa-code-branch text-6xl text-white/80"></i>
-                </div>
-              </div>
-            </div>
-            <div class="project-content">
-              <div class="project-header">
-                <h3 class="project-title">CodeConnect</h3>
-                <span class="project-category">Full Stack Development</span>
-              </div>
-              <p class="project-description">
-                A comprehensive platform for developers to showcase projects,
-                collaborate with teams, and connect with the global developer
-                community. Features real-time collaboration, project galleries,
-                and developer networking.
-              </p>
-              <div class="tech-stack">
-                <span
-                  class="tech-item bg-blue-500/20 text-blue-300 border-blue-500/30"
-                  >Express.js</span
-                >
-                <span
-                  class="tech-item bg-green-500/20 text-green-300 border-green-500/30"
-                  >Node.js</span
-                >
-                <span
-                  class="tech-item bg-yellow-500/20 text-yellow-300 border-yellow-500/30"
-                  >MongoDB</span
-                >
-                <span
-                  class="tech-item bg-cyan-500/20 text-cyan-300 border-cyan-500/30"
-                  >React.js</span
-                >
-                <span
-                  class="tech-item bg-purple-500/20 text-purple-300 border-purple-500/30"
-                  >Socket.io</span
-                >
-              </div>
-              <div class="project-links">
-                <a
-                  href="https://github.com/Subho-29X"
-                  target="_blank"
-                  class="project-link"
-                >
-                  <i class="fab fa-github"></i>
-                  <span>View Code</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- COVID Data Analysis -->
-          <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="project-image">
-              <div
-                class="project-gradient bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-500"
-              >
-                <div class="project-pattern"></div>
-                <div class="project-icon-overlay">
-                  <i class="fas fa-chart-line text-6xl text-white/80"></i>
-                </div>
-              </div>
-            </div>
-            <div class="project-content">
-              <div class="project-header">
-                <h3 class="project-title">COVID Data Analysis</h3>
-                <span class="project-category">Data Science & Analytics</span>
-              </div>
-              <p class="project-description">
-                Comprehensive analysis of COVID-19 pandemic data using advanced
-                statistical methods and machine learning algorithms. Generated
-                insights on infection patterns, vaccination effectiveness, and
-                geographical spread trends.
-              </p>
-              <div class="tech-stack">
-                <span
-                  class="tech-item bg-blue-500/20 text-blue-300 border-blue-500/30"
-                  >Python</span
-                >
-                <span
-                  class="tech-item bg-red-500/20 text-red-300 border-red-500/30"
-                  >R</span
-                >
-                <span
-                  class="tech-item bg-orange-500/20 text-orange-300 border-orange-500/30"
-                  >Pandas</span
-                >
-                <span
-                  class="tech-item bg-purple-500/20 text-purple-300 border-purple-500/30"
-                  >Matplotlib</span
-                >
-                <span
-                  class="tech-item bg-green-500/20 text-green-300 border-green-500/30"
-                  >Seaborn</span
-                >
-              </div>
-              <div class="project-links">
-                <a
-                  href="https://github.com/Subho-29X"
-                  target="_blank"
-                  class="project-link"
-                >
-                  <i class="fab fa-github"></i>
-                  <span>View Code</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- SmartChatBot -->
-          <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="project-image">
-              <div
-                class="project-gradient bg-gradient-to-br from-orange-500 via-red-500 to-pink-500"
-              >
-                <div class="project-pattern"></div>
-                <div class="project-icon-overlay">
-                  <i class="fas fa-robot text-6xl text-white/80"></i>
-                </div>
-              </div>
-            </div>
-            <div class="project-content">
-              <div class="project-header">
-                <h3 class="project-title">SmartChatBot</h3>
-                <span class="project-category">AI & Machine Learning</span>
-              </div>
-              <p class="project-description">
-                An intelligent conversational AI system powered by natural
-                language processing and deep learning. Features sentiment
-                analysis, context awareness, and multi-language support for
-                enhanced user interactions.
-              </p>
-              <div class="tech-stack">
-                <span
-                  class="tech-item bg-blue-500/20 text-blue-300 border-blue-500/30"
-                  >Python</span
-                >
-                <span
-                  class="tech-item bg-gray-500/20 text-gray-300 border-gray-500/30"
-                  >Flask</span
-                >
-                <span
-                  class="tech-item bg-purple-500/20 text-purple-300 border-purple-500/30"
-                  >TensorFlow</span
-                >
-                <span
-                  class="tech-item bg-teal-500/20 text-teal-300 border-teal-500/30"
-                  >NLTK</span
-                >
-                <span
-                  class="tech-item bg-pink-500/20 text-pink-300 border-pink-500/30"
-                  >Scikit-learn</span
-                >
-              </div>
-              <div class="project-links">
-                <a
-                  href="https://github.com/Subho-29X"
-                  target="_blank"
-                  class="project-link"
-                >
-                  <i class="fab fa-github"></i>
-                  <span>View Code</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Publications Section -->
-    <section id="publications" class="py-20">
-      <div class="container mx-auto px-4">
-        <h2
-          class="text-3xl md:text-4xl font-bold mb-12 text-center space-font"
-          data-aos="fade-up"
-        >
-          Research <span class="gradient-text">Publication</span>
-        </h2>
-        <div class="max-w-4xl mx-auto">
-          <!-- Single Publication Card: Replace with your actual data -->
-          <div
-            class="bg-slate-800/50 p-6 rounded-lg shadow-lg border border-slate-700/50 hover:border-indigo-500/50 hover:shadow-indigo-500/10 transition-all duration-300"
+      <!-- About Section -->
+      <section id="about" class="py-20 bg-slate-800/50">
+        <div class="container mx-auto px-4">
+          <h2
+            class="text-3xl md:text-4xl font-bold mb-12 text-center space-font"
             data-aos="fade-up"
           >
-            <h3 class="text-xl font-bold text-slate-100 mb-2">
-              Cybersecurity and Social Media: Privacy Concerns in the Digital
-              Age
-            </h3>
-            <p class="text-sm text-indigo-400 mb-3 font-medium">
-              International Conference on Innovative Computing & Communication
-              (ICICC) 2024
-            </p>
-            <p class="text-slate-300 mb-4 leading-relaxed">
-              While social networking websites have provided us with means to
-              speak with others, advance our businesses, and share our culture
-              more effectively, they have, on the other hand, also highlighted
-              some serious issues regarding cyber security and privacy. This
-              research, therefore, is an attempt at discussing the relationship
-              of cyber security and social media, focusing on the
-              vulnerabilities one encounters in today’s digital space.
-            </p>
-            <a
-              href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5237743"
-              target="_blank"
-              class="inline-flex items-center font-semibold text-green-400 hover:text-green-300 transition-colors"
-            >
-              Read Publication <i class="fas fa-arrow-right ml-2"></i>
-            </a>
+            About <span class="gradient-text">Me</span>
+          </h2>
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6" data-aos="fade-right">
+              <p class="text-slate-300 leading-relaxed">
+                I'm a Computer Science Engineering graduate from Chandigarh
+                University with a strong foundation in programming and web
+                development. My passion lies in creating innovative solutions
+                and learning new technologies.
+              </p>
+              <p class="text-slate-300 leading-relaxed">
+                With expertise in full-stack development and a keen interest in
+                data structures and algorithms, I strive to build efficient and
+                scalable applications that solve real-world problems.
+              </p>
+            </div>
+            <div class="space-y-4" data-aos="fade-left">
+              <div
+                class="flex items-center space-x-4 p-4 bg-slate-700/50 rounded-lg transition-all hover:bg-slate-700/80 hover:shadow-lg"
+              >
+                <i class="fas fa-graduation-cap text-2xl text-indigo-400"></i>
+                <div>
+                  <h3 class="font-semibold">Education</h3>
+                  <p class="text-sm text-slate-400">
+                    B.Tech in Computer Science Engineering
+                  </p>
+                  <p class="text-sm text-slate-400">CGPA: 8.0</p>
+                </div>
+              </div>
+              <div
+                class="flex items-center space-x-4 p-4 bg-slate-700/50 rounded-lg transition-all hover:bg-slate-700/80 hover:shadow-lg"
+              >
+                <i class="fas fa-code text-2xl text-indigo-400"></i>
+                <div>
+                  <h3 class="font-semibold">Experience</h3>
+                  <p class="text-sm text-slate-400">Full Stack Development</p>
+                  <p class="text-sm text-slate-400">
+                    Data Structures & Algorithms
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20">
-      <div class="container mx-auto px-4">
-        <h2
-          class="text-3xl md:text-4xl font-bold mb-6 text-center space-font"
-          data-aos="fade-up"
-        >
-          Get In <span class="gradient-text">Touch</span>
-        </h2>
-        <p
-          class="text-center text-slate-400 mb-12 max-w-2xl mx-auto"
-          data-aos="fade-up"
-        >
-          Wanna build a project together or have any queries? Feel free to drop
-          a message. I'd love to hear from you!
-        </p>
-        <div class="max-w-4xl mx-auto">
-          <div class="grid md:grid-cols-2 gap-12">
-            <div data-aos="fade-right">
-              <form
-                action="https://api.web3forms.com/submit"
-                method="POST"
-                class="space-y-6"
-              >
-                <input
-                  type="hidden"
-                  name="access_key"
-                  value="YOUR_ACCESS_KEY_HERE"
-                />
-                <div>
-                  <label
-                    for="name"
-                    class="block text-sm font-medium text-slate-400 mb-2"
-                    >Name</label
-                  >
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    class="w-full px-4 py-3 rounded-lg bg-slate-800/50 border border-slate-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all text-white"
-                    placeholder="Your name"
-                    required
-                  />
-                </div>
-                <div>
-                  <label
-                    for="email"
-                    class="block text-sm font-medium text-slate-400 mb-2"
-                    >Email</label
-                  >
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    class="w-full px-4 py-3 rounded-lg bg-slate-800/50 border border-slate-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all text-white"
-                    placeholder="your@email.com"
-                    required
-                  />
-                </div>
-                <div>
-                  <label
-                    for="message"
-                    class="block text-sm font-medium text-slate-400 mb-2"
-                    >Message</label
-                  >
-                  <textarea
-                    id="message"
-                    name="message"
-                    class="w-full px-4 py-3 rounded-lg bg-slate-800/50 border border-slate-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all text-white h-32"
-                    placeholder="Your message"
-                    required
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  class="w-full bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-lg transition-colors"
-                >
-                  Send Message
-                </button>
-              </form>
+      <!-- Skills Section -->
+      <section id="skills" class="py-20">
+        <div class="container mx-auto px-4">
+          <h2
+            class="text-3xl md:text-4xl font-bold mb-12 text-center space-font"
+            data-aos="fade-up"
+          >
+            Technical <span class="gradient-text">Skills</span>
+          </h2>
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Skill items -->
+            <div
+              class="p-6 bg-slate-800/50 rounded-lg text-center skill-card"
+              data-aos="zoom-in"
+            >
+              <i class="fab fa-html5 text-4xl text-red-500 mb-4"></i>
+              <h3 class="font-semibold">HTML5</h3>
             </div>
-            <div class="space-y-8" data-aos="fade-left">
-              <div>
-                <h3 class="text-xl font-semibold mb-4 gradient-text">
-                  Connect with me
-                </h3>
-                <div class="space-y-4">
-                  <div
-                    class="flex items-center space-x-4 p-4 bg-slate-800/50 rounded-lg"
-                  >
-                    <i class="fas fa-envelope text-2xl text-indigo-400"></i
-                    ><a
-                      href="mailto:Subhojit293ghosh@gmail.com"
-                      class="text-slate-300 hover:text-indigo-400 transition-colors"
-                      >Subhojit293ghosh@gmail.com</a
-                    >
-                  </div>
-                  <div
-                    class="flex items-center space-x-4 p-4 bg-slate-800/50 rounded-lg"
-                  >
-                    <i
-                      class="fas fa-map-marker-alt text-2xl text-indigo-400"
-                    ></i
-                    ><span class="text-slate-300">Patiala, Punjab</span>
+            <div
+              class="p-6 bg-slate-800/50 rounded-lg text-center skill-card"
+              data-aos="zoom-in"
+            >
+              <i class="fab fa-css3-alt text-4xl text-blue-400 mb-4"></i>
+              <h3 class="font-semibold">CSS3</h3>
+            </div>
+            <div
+              class="p-6 bg-slate-800/50 rounded-lg text-center skill-card"
+              data-aos="zoom-in"
+            >
+              <i class="fab fa-js text-4xl text-yellow-400 mb-4"></i>
+              <h3 class="font-semibold">JavaScript</h3>
+            </div>
+            <div
+              class="p-6 bg-slate-800/50 rounded-lg text-center skill-card"
+              data-aos="zoom-in"
+            >
+              <i class="fab fa-bootstrap text-4xl text-purple-500 mb-4"></i>
+              <h3 class="font-semibold">Bootstrap</h3>
+            </div>
+            <div
+              class="p-6 bg-slate-800/50 rounded-lg text-center skill-card"
+              data-aos="zoom-in"
+            >
+              <i class="fab fa-node text-4xl text-green-400 mb-4"></i>
+              <h3 class="font-semibold">NodeJS</h3>
+            </div>
+            <div
+              class="p-6 bg-slate-800/50 rounded-lg text-center skill-card"
+              data-aos="zoom-in"
+            >
+              <i class="fab fa-node-js text-4xl text-green-500 mb-4"></i>
+              <h3 class="font-semibold">Express</h3>
+            </div>
+            <div
+              class="p-6 bg-slate-800/50 rounded-lg text-center skill-card"
+              data-aos="zoom-in"
+            >
+              <i class="fas fa-database text-4xl text-green-400 mb-4"></i>
+              <h3 class="font-semibold">MongoDB</h3>
+            </div>
+            <div
+              class="p-6 bg-slate-800/50 rounded-lg text-center skill-card"
+              data-aos="zoom-in"
+            >
+              <i class="fab fa-react text-4xl text-blue-400 mb-4"></i>
+              <h3 class="font-semibold">React.js</h3>
+            </div>
+            <div
+              class="p-6 bg-slate-800/50 rounded-lg text-center skill-card"
+              data-aos="zoom-in"
+            >
+              <i class="fab fa-java text-4xl text-red-500 mb-4"></i>
+              <h3 class="font-semibold">Java</h3>
+            </div>
+            <div
+              class="p-6 bg-slate-800/50 rounded-lg text-center skill-card"
+              data-aos="zoom-in"
+            >
+              <i class="fab fa-python text-4xl text-blue-500 mb-4"></i>
+              <h3 class="font-semibold">Python</h3>
+            </div>
+            <div
+              class="p-6 bg-slate-800/50 rounded-lg text-center skill-card"
+              data-aos="zoom-in"
+            >
+              <i class="fas fa-code text-4xl text-indigo-400 mb-4"></i>
+              <h3 class="font-semibold">DSA</h3>
+            </div>
+            <div
+              class="p-6 bg-slate-800/50 rounded-lg text-center skill-card"
+              data-aos="zoom-in"
+            >
+              <i class="fab fa-git-alt text-4xl text-orange-500 mb-4"></i>
+              <h3 class="font-semibold">Git</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="py-20 bg-slate-800/50">
+        <div class="container mx-auto px-4">
+          <h2
+            class="text-3xl md:text-4xl font-bold mb-12 text-center space-font"
+            data-aos="fade-up"
+          >
+            Featured <span class="gradient-text">Projects</span>
+          </h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- CodeConnect -->
+            <div class="project-card" data-aos="fade-up">
+              <div class="project-image">
+                <div
+                  class="project-gradient bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500"
+                >
+                  <div class="project-pattern"></div>
+                  <div class="project-icon-overlay">
+                    <i class="fas fa-code-branch text-6xl text-white/80"></i>
                   </div>
                 </div>
               </div>
-              <div>
-                <h3 class="text-xl font-semibold mb-4 gradient-text">
-                  Social Links
-                </h3>
-                <div class="flex space-x-4">
-                  <a
-                    href="https://www.linkedin.com/in/subhojit-ghosh29/"
-                    target="_blank"
-                    class="p-4 bg-slate-800/50 rounded-lg text-2xl text-slate-300 hover:text-indigo-400 transition-all hover:scale-110"
-                    ><i class="fab fa-linkedin"></i
-                  ></a>
+              <div class="project-content">
+                <div class="project-header">
+                  <h3 class="project-title">CodeConnect</h3>
+                  <span class="project-category">Full Stack Development</span>
+                </div>
+                <p class="project-description">
+                  A comprehensive platform for developers to showcase projects,
+                  collaborate with teams, and connect with the global developer
+                  community. Features real-time collaboration, project
+                  galleries, and developer networking.
+                </p>
+                <div class="tech-stack">
+                  <span
+                    class="tech-item bg-blue-500/20 text-blue-300 border-blue-500/30"
+                    >Express.js</span
+                  >
+                  <span
+                    class="tech-item bg-green-500/20 text-green-300 border-green-500/30"
+                    >Node.js</span
+                  >
+                  <span
+                    class="tech-item bg-yellow-500/20 text-yellow-300 border-yellow-500/30"
+                    >MongoDB</span
+                  >
+                  <span
+                    class="tech-item bg-cyan-500/20 text-cyan-300 border-cyan-500/30"
+                    >React.js</span
+                  >
+                  <span
+                    class="tech-item bg-purple-500/20 text-purple-300 border-purple-500/30"
+                    >Socket.io</span
+                  >
+                </div>
+                <div class="project-links">
                   <a
                     href="https://github.com/Subho-29X"
                     target="_blank"
-                    class="p-4 bg-slate-800/50 rounded-lg text-2xl text-slate-300 hover:text-indigo-400 transition-all hover:scale-110"
-                    ><i class="fab fa-github"></i
-                  ></a>
+                    class="project-link"
+                  >
+                    <i class="fab fa-github"></i>
+                    <span>View Code</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- COVID Data Analysis -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="project-image">
+                <div
+                  class="project-gradient bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-500"
+                >
+                  <div class="project-pattern"></div>
+                  <div class="project-icon-overlay">
+                    <i class="fas fa-chart-line text-6xl text-white/80"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="project-content">
+                <div class="project-header">
+                  <h3 class="project-title">COVID Data Analysis</h3>
+                  <span class="project-category">Data Science & Analytics</span>
+                </div>
+                <p class="project-description">
+                  Comprehensive analysis of COVID-19 pandemic data using
+                  advanced statistical methods and machine learning algorithms.
+                  Generated insights on infection patterns, vaccination
+                  effectiveness, and geographical spread trends.
+                </p>
+                <div class="tech-stack">
+                  <span
+                    class="tech-item bg-blue-500/20 text-blue-300 border-blue-500/30"
+                    >Python</span
+                  >
+                  <span
+                    class="tech-item bg-red-500/20 text-red-300 border-red-500/30"
+                    >R</span
+                  >
+                  <span
+                    class="tech-item bg-orange-500/20 text-orange-300 border-orange-500/30"
+                    >Pandas</span
+                  >
+                  <span
+                    class="tech-item bg-purple-500/20 text-purple-300 border-purple-500/30"
+                    >Matplotlib</span
+                  >
+                  <span
+                    class="tech-item bg-green-500/20 text-green-300 border-green-500/30"
+                    >Seaborn</span
+                  >
+                </div>
+                <div class="project-links">
+                  <a
+                    href="https://github.com/Subho-29X"
+                    target="_blank"
+                    class="project-link"
+                  >
+                    <i class="fab fa-github"></i>
+                    <span>View Code</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- SmartChatBot -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="project-image">
+                <div
+                  class="project-gradient bg-gradient-to-br from-orange-500 via-red-500 to-pink-500"
+                >
+                  <div class="project-pattern"></div>
+                  <div class="project-icon-overlay">
+                    <i class="fas fa-robot text-6xl text-white/80"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="project-content">
+                <div class="project-header">
+                  <h3 class="project-title">SmartChatBot</h3>
+                  <span class="project-category">AI & Machine Learning</span>
+                </div>
+                <p class="project-description">
+                  An intelligent conversational AI system powered by natural
+                  language processing and deep learning. Features sentiment
+                  analysis, context awareness, and multi-language support for
+                  enhanced user interactions.
+                </p>
+                <div class="tech-stack">
+                  <span
+                    class="tech-item bg-blue-500/20 text-blue-300 border-blue-500/30"
+                    >Python</span
+                  >
+                  <span
+                    class="tech-item bg-gray-500/20 text-gray-300 border-gray-500/30"
+                    >Flask</span
+                  >
+                  <span
+                    class="tech-item bg-purple-500/20 text-purple-300 border-purple-500/30"
+                    >TensorFlow</span
+                  >
+                  <span
+                    class="tech-item bg-teal-500/20 text-teal-300 border-teal-500/30"
+                    >NLTK</span
+                  >
+                  <span
+                    class="tech-item bg-pink-500/20 text-pink-300 border-pink-500/30"
+                    >Scikit-learn</span
+                  >
+                </div>
+                <div class="project-links">
+                  <a
+                    href="https://github.com/Subho-29X"
+                    target="_blank"
+                    class="project-link"
+                  >
+                    <i class="fab fa-github"></i>
+                    <span>View Code</span>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Footer -->
-    <footer class="py-6 bg-slate-800/50 border-t border-slate-800">
-      <div class="container mx-auto px-4">
-        <p class="text-center text-slate-400">
-          © <span id="copyright-year"></span> Subhojit Ghosh. All rights
-          reserved.
-        </p>
-      </div>
-    </footer>
+      <!-- Publications Section -->
+      <section id="publications" class="py-20">
+        <div class="container mx-auto px-4">
+          <h2
+            class="text-3xl md:text-4xl font-bold mb-12 text-center space-font"
+            data-aos="fade-up"
+          >
+            Research <span class="gradient-text">Publication</span>
+          </h2>
+          <div class="max-w-4xl mx-auto">
+            <!-- Single Publication Card: Replace with your actual data -->
+            <div
+              class="bg-slate-800/50 p-6 rounded-lg shadow-lg border border-slate-700/50 hover:border-indigo-500/50 hover:shadow-indigo-500/10 transition-all duration-300"
+              data-aos="fade-up"
+            >
+              <h3 class="text-xl font-bold text-slate-100 mb-2">
+                Cybersecurity and Social Media: Privacy Concerns in the Digital
+                Age
+              </h3>
+              <p class="text-sm text-indigo-400 mb-3 font-medium">
+                International Conference on Innovative Computing & Communication
+                (ICICC) 2024
+              </p>
+              <p class="text-slate-300 mb-4 leading-relaxed">
+                While social networking websites have provided us with means to
+                speak with others, advance our businesses, and share our culture
+                more effectively, they have, on the other hand, also highlighted
+                some serious issues regarding cyber security and privacy. This
+                research, therefore, is an attempt at discussing the
+                relationship of cyber security and social media, focusing on the
+                vulnerabilities one encounters in today’s digital space.
+              </p>
+              <a
+                href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5237743"
+                target="_blank"
+                class="inline-flex items-center font-semibold text-green-400 hover:text-green-300 transition-colors"
+              >
+                Read Publication <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="py-20">
+        <div class="container mx-auto px-4">
+          <h2
+            class="text-3xl md:text-4xl font-bold mb-6 text-center space-font"
+            data-aos="fade-up"
+          >
+            Get In <span class="gradient-text">Touch</span>
+          </h2>
+          <p
+            class="text-center text-slate-400 mb-12 max-w-2xl mx-auto"
+            data-aos="fade-up"
+          >
+            Wanna build a project together or have any queries? Feel free to
+            drop a message. I'd love to hear from you!
+          </p>
+          <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12">
+              <div data-aos="fade-right">
+                <form
+                  action="https://api.web3forms.com/submit"
+                  method="POST"
+                  class="space-y-6"
+                >
+                  <input
+                    type="hidden"
+                    name="access_key"
+                    value="YOUR_ACCESS_KEY_HERE"
+                  />
+                  <div>
+                    <label
+                      for="name"
+                      class="block text-sm font-medium text-slate-400 mb-2"
+                      >Name</label
+                    >
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      class="w-full px-4 py-3 rounded-lg bg-slate-800/50 border border-slate-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all text-white"
+                      placeholder="Your name"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="email"
+                      class="block text-sm font-medium text-slate-400 mb-2"
+                      >Email</label
+                    >
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      class="w-full px-4 py-3 rounded-lg bg-slate-800/50 border border-slate-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all text-white"
+                      placeholder="your@email.com"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="message"
+                      class="block text-sm font-medium text-slate-400 mb-2"
+                      >Message</label
+                    >
+                    <textarea
+                      id="message"
+                      name="message"
+                      class="w-full px-4 py-3 rounded-lg bg-slate-800/50 border border-slate-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all text-white h-32"
+                      placeholder="Your message"
+                      required
+                    ></textarea>
+                  </div>
+                  <button
+                    type="submit"
+                    class="w-full bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-lg transition-colors"
+                  >
+                    Send Message
+                  </button>
+                </form>
+              </div>
+              <div class="space-y-8" data-aos="fade-left">
+                <div>
+                  <h3 class="text-xl font-semibold mb-4 gradient-text">
+                    Connect with me
+                  </h3>
+                  <div class="space-y-4">
+                    <div
+                      class="flex items-center space-x-4 p-4 bg-slate-800/50 rounded-lg"
+                    >
+                      <i class="fas fa-envelope text-2xl text-indigo-400"></i
+                      ><a
+                        href="mailto:Subhojit293ghosh@gmail.com"
+                        class="text-slate-300 hover:text-indigo-400 transition-colors"
+                        >Subhojit293ghosh@gmail.com</a
+                      >
+                    </div>
+                    <div
+                      class="flex items-center space-x-4 p-4 bg-slate-800/50 rounded-lg"
+                    >
+                      <i
+                        class="fas fa-map-marker-alt text-2xl text-indigo-400"
+                      ></i
+                      ><span class="text-slate-300">Patiala, Punjab</span>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-4 gradient-text">
+                    Social Links
+                  </h3>
+                  <div class="flex space-x-4">
+                    <a
+                      href="https://www.linkedin.com/in/subhojit-ghosh29/"
+                      target="_blank"
+                      class="p-4 bg-slate-800/50 rounded-lg text-2xl text-slate-300 hover:text-indigo-400 transition-all hover:scale-110"
+                      ><i class="fab fa-linkedin"></i
+                    ></a>
+                    <a
+                      href="https://github.com/Subho-29X"
+                      target="_blank"
+                      class="p-4 bg-slate-800/50 rounded-lg text-2xl text-slate-300 hover:text-indigo-400 transition-all hover:scale-110"
+                      ><i class="fab fa-github"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="py-6 bg-slate-800/50 border-t border-slate-800">
+        <div class="container mx-auto px-4">
+          <p class="text-center text-slate-400">
+            © <span id="copyright-year"></span> Subhojit Ghosh. All rights
+            reserved.
+          </p>
+        </div>
+      </footer>
+    </div>
+    <!-- End of main-content -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="script.js"></script>
   </body>

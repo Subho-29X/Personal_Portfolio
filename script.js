@@ -1,10 +1,76 @@
-// Initialize AOS (Animate on Scroll)
-document.addEventListener("DOMContentLoaded", function () {
+// Loading Screen Functionality
+window.addEventListener("load", function () {
+  const loadingScreen = document.getElementById("loading-screen");
+  const mainContent = document.getElementById("main-content");
+  const progressBar = document.getElementById("progress-bar");
+  const loadingText = document.getElementById("loading-text");
+
+  let progress = 0;
+  const loadingMessages = [
+    "Loading...",
+    "Initializing portfolio...",
+    "Loading assets...",
+    "Preparing experience...",
+    "Almost ready...",
+    "Welcome!",
+  ];
+
+  let messageIndex = 0;
+
+  // Simulate loading progress
+  const progressInterval = setInterval(() => {
+    progress += Math.random() * 15 + 5; // Random increment between 5-20
+
+    if (progress >= 100) {
+      progress = 100;
+      clearInterval(progressInterval);
+
+      // Final message
+      loadingText.textContent = loadingMessages[loadingMessages.length - 1];
+
+      // Hide loading screen after a short delay
+      setTimeout(() => {
+        loadingScreen.classList.add("fade-out");
+        mainContent.classList.remove("hidden");
+
+        // Remove loading screen from DOM after animation
+        setTimeout(() => {
+          loadingScreen.remove();
+          // Initialize AOS after loading screen is removed
+          initializeAOS();
+        }, 800);
+      }, 500);
+    } else {
+      // Update progress bar
+      progressBar.style.width = progress + "%";
+
+      // Update loading message
+      const newMessageIndex = Math.floor(
+        (progress / 100) * (loadingMessages.length - 1)
+      );
+      if (
+        newMessageIndex !== messageIndex &&
+        newMessageIndex < loadingMessages.length - 1
+      ) {
+        messageIndex = newMessageIndex;
+        loadingText.textContent = loadingMessages[messageIndex];
+      }
+    }
+  }, 200 + Math.random() * 300); // Random interval between 200-500ms
+});
+
+// Initialize AOS (Animate on Scroll) - moved to separate function
+function initializeAOS() {
   AOS.init({
     duration: 1000,
     once: true,
     offset: 100,
   });
+}
+
+// Initialize everything after DOM is loaded
+document.addEventListener("DOMContentLoaded", function () {
+  // Note: AOS initialization is now handled after loading screen
 
   // Mobile Menu Toggle (improved)
   const menuBtn = document.getElementById("menu-btn");
