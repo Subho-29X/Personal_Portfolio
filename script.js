@@ -11,7 +11,7 @@ window.addEventListener("load", function () {
     "Initializing portfolio...",
     "Loading assets...",
     "Preparing experience...",
-    "Almost ready...",
+    "Almost ready !!...",
     "Welcome!",
   ];
 
