@@ -10,7 +10,7 @@ window.addEventListener("load", function () {
     "Loading...",
     "Initializing portfolio...",
     "Loading assets...",
-    "Preparing experience...",
+    "Preparing experience...!!",
     "Almost ready !!...",
     "Welcome!",
   ];
