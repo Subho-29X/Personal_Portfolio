@@ -8,7 +8,7 @@ window.addEventListener("load", function () {
   let progress = 0;
   const loadingMessages = [
     "Loading....",
-    "Initializing portfolio....",
+    "Initializing portfolio....!!",
     "Loading assets...",
     "Preparing experience...!!",
     "Almost ready !!...",
