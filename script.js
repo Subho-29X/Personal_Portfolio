@@ -9,10 +9,10 @@ window.addEventListener("load", function () {
   const loadingMessages = [
     "Loading..",
     "Initializing portfolio..",
-    "Loading assets...",
+    "Loading assets..",
     "Preparing experience..",
-    "Almost ready !!..",
-    "Welcome!",
+    "Almost ready..",
+    "Welcome!!",
   ];
 
   let messageIndex = 0;
